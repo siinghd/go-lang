@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This tutorial is about standard input (`stdin`) in Go and provides production-ready examples of the "comma ok" and "comma error" idioms. We'll also review a "guess the number" game to apply these concepts.
+This tutorial is about standard input (`stdin`) in Go and provides production-ready examples of the "comma ok" and "comma error" idioms. We'll also make a "guess the number" game to apply these concepts.
 
 ## Reading Standard Input in Go
 
