@@ -1,5 +1,12 @@
 # Part 1 : Arrays
 
+## What are Arrays
+
+- An array is a fundamental data structure used in programming.
+- It's a collection of elements, each identified by at least one array index or key.
+- Arrays can hold multiple items that are usually of the same data type, like integers, strings, or objects, and they are stored in contiguous memory locations.
+- The elements can be accessed randomly by indexing into the array.
+
 ### Basic Declaration
 
 - An array is declared with a fixed length and type.
@@ -105,10 +112,6 @@ func main() {
 
 # Part 2: Slices 
  
-## Introduction
-
-This tutorial provides an in-depth look at slices in Go, a key data structure for flexible and efficient data management. We'll cover everything from basic usage to advanced techniques and common pitfalls.
-
 ## What Are Slices?
 
 - Slices are a flexible, dynamic view into the elements of an array.
