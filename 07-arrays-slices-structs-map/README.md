@@ -345,3 +345,122 @@ func main() {
     fmt.Println("Area:", rect.Area())
 }
 ```
+# Part 4: Map
+
+## What Are Maps?
+
+- Maps are a collection of key-value pairs where each key is unique.
+- They are similar to dictionaries or hash tables in other languages.
+
+## Creating and Using Maps
+
+### Declaring Maps
+
+- Maps are declared using the `map` keyword.
+- Syntax: `var mapName map[KeyType]ValueType`
+- Example: `var employeeSalary map[string]int`
+
+### Initializing Maps
+
+- Maps can be initialized using the `make` function: `employeeSalary = make(map[string]int)`
+- Map literals: `employeeSalary := map[string]string{"John": "Developer", "Emma": "Designer"}`
+
+### Adding and Updating Elements
+
+- Add or update elements using the key: `employeeSalary["Mike"] = 50000`
+
+### Retrieving Elements
+
+- Retrieve elements by their key: `salary := employeeSalary["Mike"]`
+
+### Checking for Existence
+
+- Use the "comma ok" idiom to check if a key exists: `salary, ok := employeeSalary["Mike"]`
+
+## Advanced Map Operations
+
+### Iterating over Maps
+
+- Use a `for range` loop to iterate over maps.
+- Iteration order over maps is not guaranteed.
+
+### Deleting Elements
+
+- Remove elements using the `delete` function: `delete(employeeSalary, "Mike")`
+
+### Maps and Concurrency
+
+- Maps are not safe for concurrent use without additional synchronization.
+- Use sync.RWMutex for concurrent read/write access.
+
+## Best Practices and Common Pitfalls
+
+### Choosing Key Types
+
+- Use comparable types for keys (int, string, etc.).
+- Avoid using slices or other non-comparable types as keys.
+
+### Nil Maps
+
+- A nil map behaves like an empty map when reading, but attempts to write to a nil map will cause a runtime panic.
+
+### Memory Efficiency
+
+- Preallocate maps if the size is approximately known.
+
+## Examples
+
+### Example 1: Basic Map Operations
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    employeeSalary := make(map[string]int)
+    employeeSalary["John"] = 30000
+    employeeSalary["Emma"] = 45000
+
+    fmt.Println("Employee Salaries:", employeeSalary)
+}
+```
+
+### Example 2: Iterating and Deleting
+
+```go
+func main() {
+    colors := map[string]string{"Red": "#FF0000", "Green": "#00FF00", "Blue": "#0000FF"}
+
+    // Iterating over the map
+    for color, hex := range colors {
+        fmt.Println(color, ":", hex)
+    }
+
+    // Deleting an element
+    delete(colors, "Green")
+
+    fmt.Println("Updated Colors:", colors)
+}
+```
+
+### Example 3: Maps with Struct Values
+
+```go
+type Employee struct {
+    ID     int
+    Salary int
+}
+
+func main() {
+    employees := make(map[string]Employee)
+    employees["John"] = Employee{ID: 1, Salary: 30000}
+    employees["Emma"] = Employee{ID: 2, Salary: 45000}
+
+    for name, info := range employees {
+        fmt.Printf("%s: %+v\n", name, info)
+    }
+}
+```
+
+

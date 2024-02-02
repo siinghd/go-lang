@@ -37,6 +37,11 @@ func generateDynamicData(size int) DynamicData {
 	return data
 }
 
+type Employee struct {
+	ID     int
+	Salary int
+}
+
 func main() {
 	rand.New(rand.NewSource(time.Now().UnixNano()))
 	// Creating an array of DataRecord structs
@@ -53,5 +58,13 @@ func main() {
 	// Displaying the data records
 	for _, record := range records {
 		fmt.Printf("Record %d:\nFixed Data: %v\nDynamic Data: %v\n\n", record.ID, record.Fixed, record.Dynamic)
+	}
+
+	employees := make(map[string]Employee)
+	employees["John"] = Employee{ID: 1, Salary: 30000}
+	employees["Emma"] = Employee{ID: 2, Salary: 45000}
+
+	for name, info := range employees {
+		fmt.Printf("%s: %+v\n", name, info)
 	}
 }
