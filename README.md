@@ -57,9 +57,6 @@ To update Go:
 
 Contributions to this tutorial series are welcome. Read the contribution(coming soon) guidelines before making a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## About the Author
 
